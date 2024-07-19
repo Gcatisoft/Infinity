@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=3.0, minimum-scale=1.0"
+    />
+    <title>Menu</title>
+    <link rel="stylesheet" href="../css/estilos.css" />
+    <link rel="stylesheet" href="../css/galeria.css" />
+    <link href="../stio-web/styles.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/e18fadc792.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+      }
+
+      .gallery-category {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .gallery-category__title {
+        background-color: #f4f4f4;
+        padding: 1rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .gallery-category__images {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .gallery-item {
+        flex: 1 1 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+        transition: opacity 0.3s;
+      }
+
+      .gallery-item:hover img {
+        opacity: 0.8;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .gallery-item__caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 0.5rem;
+        text-align: center;
+        font-size: 0.9rem;
+        border-top: 1px solid #ddd;
+      }
+
+      @media (max-width: 768px) {
+        .gallery-item {
+          flex: 1 1 calc(100% - 1rem);
+          max-width: calc(100% - 1rem);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="modal" id="modal">
+      <div class="modal__content">
+        <img src="" alt="" class="modal__img" id="modal__img" />
+      </div>
+      <div class="modal__boton" id="modal__boton">X</div>
+    </div>
+
+    <header class="main-header">
+      <div class="container container--flex">
+        <div class="logo-container column column--50">
+          <h1 class="logo"></h1>
+        </div>
+      </div>
+    </header>
+    <!--Menu-->
+    <nav class="main-nav">
+      <div class="container container--flex">
+        <i class="fa-solid fa-bars icon-menu" id="btn-menu"></i>
+        <ul class="menu" id="menu">
+          <li class="menu__item">
+            <a href="../index.html" class="menu__link">Inicio</a>
+          </li>
+          <li class="menu__item">
+            <a href="menu.html" class="menu__link menu__link--select">Menu</a>
+          </li>
+          <li class="menu__item">
+            <a href="../html/contacto.html" class="menu__link">Contacto</a>
+          </li>
+        </ul>
+        <div class="social-icon">
+          <a href="" class="social-icon__link"><i class="fa-brands fa-facebook"></i></a>
+          <a href="" class="social-icon__link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="" class="social-icon__link"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="banner">
+      <img src="../img/logo2.jpg" alt="" class="banner__img" />
+      <div class="banner__content"></div>
+    </section>
+
+    <main class="main">
+      <div class="gallery">
+        <!-- Motorla Section -->
+        <div class="gallery-category" id="motorola">
+          <h2 class="gallery-category__title">Motorola</h2>
+          <div class="gallery-category__images">
+            <div class="gallery-item">
+              <img src="../img/cargamoto.jpg" alt="Cargador motorola" />
+              <p class="gallery-item__caption">Cargador Turbo Power</p>
+            </div>
+            <div class="gallery-item">
+              <img src="../img/aurismoto.jpg" alt="Auriculares" />
+              <p class="gallery-item__caption">Auriculares Motorola</p>
+            </div>
+            <div class="gallery-item">
+              <img src="../img/tpu.png" alt="Fundas" />
+              <p class="gallery-item__caption">TPU Motorola</p>
+            </div>
+            <div class="gallery-item">
+              <img src="../img/bateria.jpg" alt="Bateria" />
+              <p class="gallery-item__caption">Baterias Motorola</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Samsung Section -->
+        <div class="gallery-category" id="samsung">
+          <h2 class="gallery-category__title">Samsung</h2>
+          <div class="gallery-category__images">
+            <div class="gallery-item">
+              <img src="../img/tpusamsung.png" alt="Fundas" />
+              <p class="gallery-item__caption">TPU Samsung</p>
+            </div>
+            <div class="gallery-item">
+              <img src="../img/samsungcarga.jpg" alt="cargador" />
+              <p class="gallery-item__caption">Cargador Original</p>
+            </div>
+
+            <div class="gallery-item">
+              <img src="../img/aurissamsung.jpg" alt="Auriculares" />
+              <p class="gallery-item__caption">Auriculares Original</p>
+            </div>
+            <div class="gallery-item">
+              <img src="../img/cabezalsamsung.png" alt="cabezal" />
+              <p class="gallery-item__caption">Cabezal Samsung</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- iPhone Section -->
+        <div class="gallery-category" id="iphone">
+          <h2 class="gallery-category__title">Iphone</h2>
+          <div class="gallery-category__images">
+            <div class="gallery-item">
+              <img src="../img/tpuiphone.png" alt="tpu" />
+              <p class="gallery-item__caption">TPU logo</p>
+            </div>
+            <div class="gallery-item">
+              <img src="../img/cargadoriph.jpg" alt="cargador" />
+              <p class="gallery-item__caption">Cargador Original</p>
+            </div>
+
+            <div class="gallery-item">
+              <img src="../img/usblainin.jpg" alt="usb" />
+              <p class="gallery-item__caption">Cable USB-Lightning IPhone</p>
+            </div>
+            <div class="gallery-item">
+              <img src="../img/magsafe.jpg" alt="magsafe" />
+              <p class="gallery-item__caption">Cargadores Magsafe Iphone</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Parlantes Section -->
+        <div class="gallery-category" id="parlantes">
+          <h2 class="gallery-category__title">Parlantes</h2>
+          <div class="gallery-category__images">
+            <div class="gallery-item">
+              <img src="../img/parlantesoul.jpg" alt="soul" />
+              <p class="gallery-item__caption">Parlante TRAVEL RIFF XS100</p>
+            </div>
+            <div class="gallery-item">
+              <img src="../img/parlanteaitech.jpg" alt="aitech" />
+              <p class="gallery-item__caption">Parlante Aitech 2x4"</p>
+            </div>
+            <div class="gallery-item">
+              <img src="../img/parlantesoulcuadrado.jpg" alt="soul" />
+              <p class="gallery-item__caption">Parlante SOUL POCKET RIFF xs50</p>
+            </div>
+            <div class="gallery-item">
+              <img src="../img/soulgrande.jpg" alt="soul" />
+              <p class="gallery-item__caption">Parlante SOUL XL-800</p>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Accesorios Gamer Section -->
+        <div class="gallery-category" id="accesorios-gamer">
+          <h2 class="gallery-category__title">Accesorios Gamer</h2>
+          <div class="gallery-category__images">
+            <div class="gallery-item">
+              <img src="../img/tecladoaitech.jpg" alt="teclado Gamer" />
+              <p class="gallery-item__caption">Teclado Aitech K502</p>
+            </div>
+            <div class="gallery-item">
+              <img src="../img/padaitech.jpg" alt="Pad" />
+              <p class="gallery-item__caption">Pad Mouse Led Rgb Aitech Gg09 25x35cm</p>
+            </div>
+            <div class="gallery-item">
+              <img src="../img/wireless.jpg" alt="joystick" />
+              <p class="gallery-item__caption">Joystick Wireless</p>
+            </div>
+            <div class="gallery-item">
+              <img src="../img/ps3.jpg" alt="ps3" />
+              <p class="gallery-item__caption">Joystick Ps3 Sony</p>
+            </div>
+
+            <div class="gallery-item">
+              <img src="../img/gatillogamer.jpg" alt="gatillo" />
+              <p class="gallery-item__caption">Joystick Gatillos Gamepad </p>
+            </div>
+            <div class="gallery-item">
+              <img src="../img/sillagamer.png" alt="silla" />
+              <p class="gallery-item__caption">Silla Gamer AFA</p>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../js/menu.js"></script>
+    <script src="../js/modal.js"></script>
+  </body>
+</html>
